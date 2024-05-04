@@ -1,0 +1,29 @@
+{
+    "name": "rust-ms",
+    "image": "mcr.microsoft.com/devcontainers/rust",
+    "init": true,
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "[rust]": {
+                    "editor.formatOnSave": true,
+                    "editor.formatOnPaste": true
+                },
+                "rust-analyzer.checkOnSave": true,
+                "rust-analyzer.check.command": "clippy",
+                "editor.inlayHints.enabled": "on",
+                "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+                "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+                "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "reborrow",
+                "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+                "rust-analyzer.inlayHints.reborrowHints.enable": "always",
+                "rust-analyzer.inlayHints.typeHints.hideClosureInitialization": true,
+                "rust-analyzer.inlayHints.typeHints.hideNamedConstructor": true,
+                "rust-analyzer.inlayHints.discriminantHints.enable": "always",
+                "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+                "rust-analyzer.inlayHints.closureCaptureHints.enable": true
+            },
+            "extensions": []
+        }
+    }
+}
