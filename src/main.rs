@@ -50,7 +50,13 @@ where
     /// Adds an element first in the list.
     /// This operation should compute in O(1) time.
     fn push_front(&mut self, elt: T) {
-        unimplemented!()
+        let new_node = Node {
+            data: elt,
+            next: None,
+            prev: None,
+        };
+        self.head = Some(Box::new(new_node.clone()));
+        self.tail = Some(Box::new(new_node));
     }
 }
 
