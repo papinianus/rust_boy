@@ -1,16 +1,22 @@
 use std::fmt;
+
+#[derive(Clone)]
 struct Node<T> {
     data: T,
 }
 
 struct DoublyLinkedList<T> {
-    data: T,
+    head: Option<Node<T>>,
+    tail: Option<Node<T>>,
 }
 
 impl<T> DoublyLinkedList<T> {
     /// contructor
     fn new() -> Self {
-        unimplemented!()
+        Self {
+            head: None,
+            tail: None,
+        }
     }
     /// Removes the last element from a list and returns it, or None if it is empty.
     /// This operation should compute in O(1) time.
@@ -26,7 +32,9 @@ impl<T> DoublyLinkedList<T> {
 
     /// Appends an element to the back of a list.
     /// This operation should compute in O(1) time.
-    fn push_back(&mut self, elt: T) {}
+    fn push_back(&mut self, elt: T) {
+        unimplemented!()
+    }
 
     /// Adds an element first in the list.
     /// This operation should compute in O(1) time.
@@ -38,10 +46,11 @@ impl<T> DoublyLinkedList<T> {
 impl<T> fmt::Display for DoublyLinkedList<T>
 where
     T: fmt::Display,
+    T: Clone,
 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        unimplemented!()
-        // let mut current = self.head.clone();
+        let mut current = self.head.clone();
+        write!(f, "(")?;
         // while let Some(node) = current {
         //     let n = node.borrow();
         //     write!(f, "{}", n.data)?;
@@ -50,7 +59,8 @@ where
         //         write!(f, "<--->")?;
         //     }
         // }
-        // Ok(())
+        write!(f, ")")?;
+        Ok(())
     }
 }
 
