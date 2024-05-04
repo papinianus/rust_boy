@@ -2,7 +2,11 @@
 
 ## derived from
 
-- [Rustを1ミリも知らない俺がRustプログラミングさせられた件 【低レイヤーガールとRustを学ぼう！】](https://www.youtube.com/watch?v=6AiU6ncdUdk)
+- [低レイヤーガールと学ぶRustシリーズ](https://www.youtube.com/playlist?list=PLIuwYg2kLfAYN2WQqVYViYCoqsPXboP0V)
+  1. [Rustを1ミリも知らない俺がRustプログラミングさせられた件 【低レイヤーガールとRustを学ぼう！】](https://www.youtube.com/watch?v=6AiU6ncdUdk)
+  2. [Rustを1ミリも知らない俺がRustプログラミングさせられた件 第２話『ビルドエラー討伐』](https://www.youtube.com/watch?v=pGSCgsaImJQ)
+  3. [Rustを1ミリも知らない俺がRustプログラミングさせられた件 第３話『所有権』](https://www.youtube.com/watch?v=ELJfuFdEV8Y)
+
 
 ## source
 
