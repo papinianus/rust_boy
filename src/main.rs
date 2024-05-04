@@ -23,14 +23,22 @@ where
             tail: None,
         }
     }
+
+    #[allow(dead_code)]
+    fn is_empty(&self) -> bool {
+        self.head.is_none() && self.tail.is_none()
+    }
+
     /// Removes the last element from a list and returns it, or None if it is empty.
     /// This operation should compute in O(1) time.
+    #[allow(dead_code)]
     fn pop_back(&mut self) -> Option<T> {
         unimplemented!()
     }
 
     /// Removes the first element and returns it, or None if the list is empty.
     /// This operation should compute in O(1) time.
+    #[allow(dead_code)]
     fn pop_front(&mut self) -> Option<T> {
         unimplemented!()
     }
