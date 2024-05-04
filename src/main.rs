@@ -86,11 +86,11 @@ fn main() {
     println!("{}", list); // (1<--->2)
 
     list.push_back(3);
-
     println!("{}", list); // (1<--->2<--->3)
 
     list.push_front(4);
-    list.push_front(5);
+    println!("{}", list); // (4<--->1<--->2<--->3)
 
+    list.push_front(5);
     println!("{}", list); // (5<--->4<--->1<--->2<--->3)
 }
