@@ -3,14 +3,19 @@ use std::fmt;
 #[derive(Clone)]
 struct Node<T> {
     data: T,
+    next: Option<Box<Node<T>>>,
+    prev: Option<Box<Node<T>>>,
 }
 
 struct DoublyLinkedList<T> {
-    head: Option<Node<T>>,
-    tail: Option<Node<T>>,
+    head: Option<Box<Node<T>>>,
+    tail: Option<Box<Node<T>>>,
 }
 
-impl<T> DoublyLinkedList<T> {
+impl<T> DoublyLinkedList<T>
+where
+    T: Clone,
+{
     /// contructor
     fn new() -> Self {
         Self {
@@ -33,7 +38,13 @@ impl<T> DoublyLinkedList<T> {
     /// Appends an element to the back of a list.
     /// This operation should compute in O(1) time.
     fn push_back(&mut self, elt: T) {
-        unimplemented!()
+        let new_node = Node {
+            data: elt,
+            next: None,
+            prev: None,
+        };
+        self.head = Some(Box::new(new_node.clone()));
+        self.tail = Some(Box::new(new_node));
     }
 
     /// Adds an element first in the list.
@@ -51,14 +62,14 @@ where
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let mut current = self.head.clone();
         write!(f, "(")?;
-        // while let Some(node) = current {
-        //     let n = node.borrow();
-        //     write!(f, "{}", n.data)?;
-        //     current = n.next.clone();
-        //     if current.is_some() {
-        //         write!(f, "<--->")?;
-        //     }
-        // }
+        while let Some(node) = current {
+            let n = node; //.borrow();
+            write!(f, "{}", n.data)?;
+            current = n.next.clone();
+            if current.is_some() {
+                write!(f, "<--->")?;
+            }
+        }
         write!(f, ")")?;
         Ok(())
     }
